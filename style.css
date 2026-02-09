@@ -1,0 +1,151 @@
+/* Add your CSS here */
+
+/* Reset some default styles for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+  padding: 0 20px 20px 20px; /* No top padding, keeps sides and bottom */
+}
+
+/* Header styles */
+header {
+  text-align: center;
+  background: linear-gradient(to bottom, #0071c5 0%, #005a9e 100%); /* Intel blue gradient for depth */
+  color: white;
+  padding: 60px 20px; /* Increased padding for more space */
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for elevation */
+  width: 100vw; /* Full viewport width */
+  margin-left: calc(50% - 50vw); /* Centers it and removes side margins */
+}
+
+header img {
+  width: 200px; /* Slightly larger logo for better prominence */
+  height: auto;
+  margin-bottom: 30px; /* More space below the logo */
+}
+
+header h1 {
+  font-size: 3em; /* Larger headline for impact */
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for better contrast */
+}
+
+header p {
+  font-size: 1.3em; /* Slightly larger subheading */
+  max-width: 700px; /* Wider for better readability */
+  margin: 0 auto;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Shadow for contrast */
+}
+
+/* Timeline section styles */
+section {
+  display: flex;
+  flex-direction: row; /* Horizontal layout always */
+  gap: 20px;
+  max-width: none; /* Allow full width */
+  margin: 0 auto;
+  padding: 0 20px; /* Adds side padding for better spacing */
+  overflow-x: auto; /* Horizontal scroll */
+  scroll-snap-type: x mandatory; /* Horizontal snapping */
+}
+
+/* This ensures images within the section are properly sized */
+section img {
+  max-width: 100%;
+  height: auto;
+  max-height: 120px; /* Limits height to 120px */
+  object-fit: cover; /* Crops taller images to fit without distortion */
+  border-radius: 4px; /* Subtle rounding for Intel aesthetic */
+}
+
+/* Individual card styles */
+section div {
+  background-color: white;
+  border: 2px solid #e0e0e0; /* Lighter border for consistency */
+  border-radius: 8px;
+  padding: 15px; /* Reduced from 20px for shorter height */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+  position: relative; /* For positioning the tooltip */
+  scroll-snap-align: start; /* Snaps to the start of each card */
+  flex-shrink: 0; /* Prevents shrinking */
+  width: 350px; /* Fixed width for cards */
+}
+
+section div:hover {
+  transform: translateY(-5px); /* Lift on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-color: #0071c5; /* Intel blue border reveal for interactivity */
+}
+
+/* Tooltip for more information on hover - default */
+section div::after {
+  content: "Hover for details!"; /* Fallback */
+  position: absolute;
+  top: 100%; /* Positions below the card */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0071c5; /* Intel blue background */
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  opacity: 0; /* Hidden by default */
+  visibility: hidden; /* Fully hidden */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  white-space: nowrap; /* Prevents wrapping */
+  z-index: 10; /* Ensures it appears above */
+  pointer-events: none; /* Prevents interfering with hover */
+}
+
+/* Specific details for each card */
+section div:nth-child(1)::after { content: "Intel's founding year with key innovations."; }
+section div:nth-child(2)::after { content: "Revolutionized computing with the 4004."; }
+section div:nth-child(3)::after { content: "Introduced x86 architecture still in use today."; }
+section div:nth-child(4)::after { content: "Brought 32-bit processing to PCs."; }
+section div:nth-child(5)::after { content: "Marked peak emissions, leading to green initiatives."; }
+section div:nth-child(6)::after { content: "Launched goals for climate and sustainability."; }
+section div:nth-child(7)::after { content: "Committed to net-zero by 2040."; }
+section div:nth-child(8)::after { content: "Achieved 99% renewable energy usage."; }
+section div:nth-child(9)::after { content: "Hosted summit for semiconductor sustainability."; }
+
+section div:hover::after {
+  opacity: 1; /* Shows on hover */
+  visibility: visible;
+}
+
+section h2 {
+  font-size: 1.5em;
+  color: #0071c5; /* Intel blue */
+  margin-bottom: 8px; /* Reduced from 10px */
+}
+
+section h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px; /* Reduced from 15px */
+  color: #333; /* Darker for contrast */
+}
+
+section p {
+  font-size: 1em;
+  line-height: 1.4; /* Slightly tighter for shorter height */
+  margin-bottom: 0; /* Remove bottom margin if needed */
+}
+
+/* Footer note */
+body > p {
+  text-align: center;
+  margin-top: 20px;
+  font-style: italic;
+  color: #666;
+}
