@@ -142,6 +142,19 @@ section p {
   margin-bottom: 0; /* Remove bottom margin if needed */
 }
 
+/* Widen columns and allow hover overflow */
+.container .row > div {
+  width: auto;
+  max-width: 100%;
+  overflow: visible;
+}
+
+/* Give extra space at the bottom of the three-column section */
+.container.my-5 {
+  margin-bottom: 6rem; /* increase if needed */
+}
+
+
 /* Footer note */
 body > p {
   text-align: center;
